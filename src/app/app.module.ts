@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { ShowMoneyComponent } from './components/show-money/show-money.component';
 import { LoginComponent } from './components/login/login.component';
 import { AccountComponent } from './components/account/account.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -25,7 +24,6 @@ import { UserInformationComponent } from './components/user-information/user-inf
   declarations: [
     AppComponent,
     NaviComponent,
-    ShowMoneyComponent,
     LoginComponent,
     AccountComponent,
     AccountAddComponent,
