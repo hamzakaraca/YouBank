@@ -1,0 +1,31 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card" >
+            <div class="card-header" ><h5 class="title" >Hesap ekle</h5></div>
+            <div class="card-body" >
+                <form [formGroup]="accountAddForm">
+                    <div class="mb-3">
+                        <label for="accountNumber">Hesap Numarası</label>
+                    <div class="form-group" >
+                        <input id="accountNumber" type="text" id="accountNumber" formControlName="accountNumber" class="form-control" placeholder="4800001" />
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="customerId">Müşteri Seçiniz</label>
+                        <select type="number" id="customerId" formControlName="customerId" class="form-select">
+                            <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.customerFullName}}</option>
+                        </select>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-danger" routerLink="accounts" (click)="add()">Ekle</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+

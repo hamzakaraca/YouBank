@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="./assets/images/YouBank.png" alt="" width="40" height="40">
+      <a  class="navbar-brand" type="button" >YouBank</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <button routerLink="accounts">Tüm Hesapları Görüntüle</button>
+          </li>
+
+          <li class="nav-item">
+            <button routerLink="credits">Tüm Kredileri Görüntüle</button>
+          </li>
+
+          <li class="nav-item">
+            <button routerLink="account/add">Hesap Ekle</button>
+          </li>
+
+          <li class="nav-item">
+            <button routerLink="customer/add">Müşteri Ekle</button>
+          </li>
+
+          <li *ngIf="ulogin!=true" class="nav-item">
+            <button  routerLink="login" class="btn btn-outline-success">Giriş</button>
+          </li>
+        </ul>
+        <div *ngIf="ulogin!=false" class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hesabım
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="user/info" >Hesap Bilgilerim</a></li>
+            <li><a class="dropdown-item" type="button" (click)="logOut()" >Çıkış Yap</a></li>
+          </ul>
+        </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          
+        </form>
+      </div>
+    </div>
+  </nav>
+
+

@@ -1,0 +1,9 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" (click)="deleteUser(currentUser)" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Silinecek Kullanıcı Seçiniz
+    </button>
+    <ul class="dropdown-menu" *ngFor="let user of users" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">{{user.firstName}}</a></li>
+      
+    </ul>
+  </div>

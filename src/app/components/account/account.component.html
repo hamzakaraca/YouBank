@@ -1,0 +1,30 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table">
+ <thead>
+        <tr>
+            
+            <th>Hesap Numarası</th>
+            <th>Müşteri İsmi</th>
+            <th>Hesap Oluşturulma Tarihi</th>
+            <th>Hesaptaki Para</th>
+        </tr>
+ </thead>
+ <tbody>
+        <tr *ngFor="let accountdto of accountDtos">
+            
+            <td>{{accountdto.accountNumber}}</td>
+            <td>{{accountdto.customerFullName}}</td>
+            <td>{{accountdto.accountCreateDate|date}}</td>
+            <td>{{accountdto.money}}</td>
+            <img (click)="deleteById(accountdto.id)" (click)="refresh()" src="./assets/images/Delete.jfif" alt="" width="67px" height="67px">
+            <app-account-update  [id]="accountdto.id"> </app-account-update>
+            
+            
+        </tr>
+ </tbody>
+    
+    
+</table>

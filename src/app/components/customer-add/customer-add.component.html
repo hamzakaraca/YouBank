@@ -1,0 +1,45 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card" >
+            <div class="card-header" ><h5 class="title" >Müşteri Ekleme</h5></div>
+            <div class="card-body" >
+                <form [formGroup]="customerAddForm">
+                    <div class="mb-3">
+                        <label for="customerFullName">İsim Soyisim</label>
+                    <div class="form-group" >
+                        <input type="text" id="customerFullName" formControlName="customerFullName" class="form-control" placeholder="Ayşe Sarıca" />
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country">Şehir</label>
+                    <div class="form-group" >
+                        <input type="text" id="country" formControlName="country" class="form-control" placeholder="Konya" />
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dateOfBirth">Doğum Tarihi</label>
+                    <div class="form-group" >
+                        <input type="datetime-local" id="dateOfBirth" formControlName="dateOfBirth" class="form-control" />
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nationalityNumber">Kimlik No</label>
+                    <div class="form-group" >
+                        <input type="text" id="nationalityNumber" formControlName="nationalityNumber" class="form-control" placeholder="64825974861" />
+                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-danger" (click)="add()">Ekle</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+

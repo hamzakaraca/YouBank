@@ -1,0 +1,14 @@
+<div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm">
+        <div class="user-box">
+            <input type="text" formControlName="email" name="" required="" placeholder="Kullanıcı Adı">
+            
+        </div>
+        <div class="user-box">
+            <input type="password" formControlName="password" name="" id="Sifre" required="" placeholder="Şifre">
+            
+        </div>
+        <button class="btn btn-info" (click)="login()">Giriş yap</button>
+    </form>
+</div>

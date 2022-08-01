@@ -1,0 +1,12 @@
+form{
+    width: auto;
+}
+#accountNumber{
+    width: min-content;
+}
+.card-body{
+    width: min-content;
+}
+.content{
+    width: min-content;
+}
