@@ -9,16 +9,18 @@
             <th>Kredi Miktarı</th>
             <th>Müşteri Id</th>
             <th>Faiz Oranı</th>
+            <th>Ödenecek Tutar</th>
             <th>Kredi Bitiş Tarihi</th>
         </tr>
  </thead>
  <tbody>
         <tr *ngFor="let credit of credits">
             
-            <td>{{credit.quantityOfCredit}}</td>
+            <td>{{credit.quantityOfCredit|currency:"TRY":"₺":"4.2-2"}}</td>
             <td>{{credit.customerId}}</td>
             <td>{{credit.interestRate}}</td>
-            <td>{{credit.finishDateOfCredit}}</td>
+            <td>{{credit.quantityOfCredit |showWillPayCredit:credit.interestRate |currency:"TRY":"₺":"4.2-2" }}</td>
+            <td>{{credit.finishDateOfCredit|date:"d/M/y"}}</td>
             <app-credit-update [currentCredit]="credit"></app-credit-update>
             <!-- <img (click)="deleteById(accountdto.id)" (click)="refresh()" src="./assets/images/Delete.jfif" alt="" width="67px" height="67px"> -->
             

@@ -19,6 +19,10 @@ import { UserComponent } from './components/user/user.component';
 import { CreditUpdateComponent } from './components/credit-update/credit-update.component';
 import { CustomerAddComponent } from './components/customer-add/customer-add.component';
 import { UserInformationComponent } from './components/user-information/user-information.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
+import { ShowWillPayCreditPipe } from './components/pipes/show-will-pay-credit.pipe';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { UserInformationComponent } from './components/user-information/user-inf
     UserComponent,
     CreditUpdateComponent,
     CustomerAddComponent,
-    UserInformationComponent
+    UserInformationComponent,
+    AdminComponent,
+    HomeComponent,
+    ShowWillPayCreditPipe,
+    
   ],
   imports: [
     BrowserModule,

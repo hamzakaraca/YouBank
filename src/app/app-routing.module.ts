@@ -8,6 +8,7 @@ import { AccountComponent } from './components/account/account.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { CustomerAddComponent } from './components/customer-add/customer-add.component';
 import { LoginGuard } from './components/guards/login.guard';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -17,7 +18,7 @@ import { UserComponent } from './components/user/user.component';
 const routes: Routes = [
   {path:"accounts",component:AccountComponent},
   {path:"login",component:LoginComponent},
-  {path:"home",component:LoginComponent},
+  {path:"home",component:HomeComponent},
   {path:"account/add",component:AccountAddComponent,canActivate:[LoginGuard]},
   {path:"account/update",component:AccountUpdateComponent,canActivate:[LoginGuard]},
   {path:"register",component:RegisterComponent},

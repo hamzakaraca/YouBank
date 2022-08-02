@@ -2,8 +2,8 @@ import { DecimalPipe } from "@angular/common";
 
 export interface Credit{
     id:number;
-    quantityOfCredit:string;
+    quantityOfCredit:number;
     customerId:number;
-    interestRate:Number;
+    interestRate:number;
     finishDateOfCredit:Date;
 }
