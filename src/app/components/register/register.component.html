@@ -1,4 +1,5 @@
-<body class="text-center">
+<div id="main">
+  <div id="register"><body class="text-center">
     
     <main class="form-signin">
       <form [formGroup]="registerForm">
@@ -13,7 +14,7 @@
             <input formControlName="lastName" type="text" class="form-control" id="floatingInputLastName" placeholder="Lütfen Soyadınızı Giriniz!">
             <label for="floatingInputLastName">Soyisim</label>
           </div>
-
+  
         <div class="form-floating">
           <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Email adres</label>
@@ -22,11 +23,14 @@
           <input formControlName="password"  type="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Şifre</label>
         </div>
-
+  
         <button class="w-100 btn btn-lg btn-primary" (click)="register()">Kayıt Ol</button>
       </form>
     </main>
     
     
         
-</body>
+  </body>
+</div>
+  
+</div>

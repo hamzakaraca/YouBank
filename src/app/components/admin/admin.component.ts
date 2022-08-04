@@ -7,13 +7,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
   constructor(private authservice:AuthService) { }
 
   ngOnInit(): void {
+    this.isAdmin()
   }
   
   isAdmin(){
-    this.authservice.isAdmin();
+    return this.authservice.isAdmin();
   }
 }

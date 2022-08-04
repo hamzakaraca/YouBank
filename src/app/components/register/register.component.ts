@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   registerForm:FormGroup
   constructor(private authService:AuthService,
     
-    private formBuilder:FormBuilder) { }
+    private formBuilder:FormBuilder,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createRegisterForm();
@@ -32,13 +33,13 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       let registerModel=Object.assign({},this.registerForm.value)
       this.authService.register(registerModel).subscribe(response=>{
-        // this.toastrService.show("başarıyla tamamlandı.","KAYIT")
+         this.toastrService.show("başarıyla tamamlandı.","KAYIT")
       },responseError=>{
-        // this.toastrService.error(responseError.error)
+         this.toastrService.error(responseError.error)
       })
     }
     else{
-      // this.toastrService.error("Form hatalı","HATA!!!")
+       this.toastrService.error("Form hatalı","HATA!!!")
     }
   }
 }

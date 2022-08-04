@@ -1,0 +1,9 @@
+#main{
+    width: 700px;
+    height: 700px;
+}
+
+#register{
+    width: max-content;
+    padding: 30% 50% 30% 50%;
+}

@@ -48,4 +48,10 @@ export class LoginComponent implements OnInit {
     refresh(){
       window.location.reload();
     }
+
+    refreshLocalStorage(){
+      if (this.authService.loggedIn()!=true) {
+        window.localStorage.clear();
+      } 
+    }
 }

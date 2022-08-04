@@ -5,13 +5,16 @@ import { combineLatest } from 'rxjs';
 import { AccountAddComponent } from './components/account-add/account-add.component';
 import { AccountUpdateComponent } from './components/account-update/account-update.component';
 import { AccountComponent } from './components/account/account.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { CreditComponent } from './components/credit/credit.component';
 import { CustomerAddComponent } from './components/customer-add/customer-add.component';
+import { AdminGuard } from './components/guards/admin.guard';
 import { LoginGuard } from './components/guards/login.guard';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { UserInformationComponent } from './components/user-information/user-information.component';
 import { UserComponent } from './components/user/user.component';
 
@@ -24,9 +27,11 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"credits",component:CreditComponent},
   {path:"account/add/accounts",component:AccountComponent,canActivate:[LoginGuard]},
-  {path:"user",component:UserComponent},
+  {path:"user/delete",component:UserDeleteComponent,canActivate:[AdminGuard,LoginGuard]},
   {path:"customer/add",component:CustomerAddComponent,canActivate:[LoginGuard]},
-  {path:"user/info",component:UserInformationComponent}
+  {path:"user/info",component:UserInformationComponent},
+  {path:"user/change-password",component:ChangePasswordComponent},
+  {path:"users",component:UserComponent,canActivate:[AdminGuard,LoginGuard]}
 ];
 
 @NgModule({

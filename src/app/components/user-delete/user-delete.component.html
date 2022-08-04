@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-10">
+      <label for="userForDelete">Silinecek Kullanıcıyı Seçiniz</label>
+      <select [(ngModel)]="currentUser" class="form-select">
+      <option class="userForDelete" *ngFor="let user of users" [ngValue]="user">
+        {{ user.firstName }} {{ user.lastName }}
+      </option>
+    </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger" (click)="deleteUser()">Sil</button>
+    </div>
+  </div>

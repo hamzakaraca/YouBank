@@ -15,6 +15,7 @@ export class CreditComponent implements OnInit {
   dataLoaded=false;
   ngOnInit(): void {
     this.getAllCredits();
+    
   }
 
   getAllCredits(){

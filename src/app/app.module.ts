@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,10 @@ import { UserInformationComponent } from './components/user-information/user-inf
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShowWillPayCreditPipe } from './components/pipes/show-will-pay-credit.pipe';
+import { UserDeleteComponent } from './components/user-delete/user-delete.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+
+
 
 
 @NgModule({
@@ -41,6 +45,8 @@ import { ShowWillPayCreditPipe } from './components/pipes/show-will-pay-credit.p
     AdminComponent,
     HomeComponent,
     ShowWillPayCreditPipe,
+    UserDeleteComponent,
+    ChangePasswordComponent,
     
   ],
   imports: [
@@ -54,7 +60,7 @@ import { ShowWillPayCreditPipe } from './components/pipes/show-will-pay-credit.p
       positionClass: 'toast-bottom-right',
       
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     {

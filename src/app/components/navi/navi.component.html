@@ -24,23 +24,27 @@
           <li class="nav-item">
             <button routerLink="customer/add">Müşteri Ekle</button>
           </li>
-
-          <li *ngIf="ulogin!=true" class="nav-item">
-            <button  routerLink="login" class="btn btn-outline-success">Giriş</button>
-          </li>
         </ul>
+        <div *ngIf="ulogin!=true">
+            <button type="button" routerLink="register">Kaydol</button>
+        </div>
+        <div *ngIf="ulogin!=true" class="nav-item">
+          <button  routerLink="login" class="btn btn-outline-success">Giriş</button>
+        </div>
         <div *ngIf="ulogin!=false" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Hesabım
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" routerLink="user/info" >Hesap Bilgilerim</a></li>
+            <li><a class="dropdown-item" routerLink="user/change-password" >Şifre Değiştirme</a></li>
             <li><a class="dropdown-item" type="button" (click)="logOut()" >Çıkış Yap</a></li>
           </ul>
         </div>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
+
           
         </form>
       </div>

@@ -30,7 +30,6 @@ export class AccountComponent implements OnInit {
     this.accountService.getAccountFullAtribute().subscribe(response=>{
       this.accountDtos=response.data;
       this.dataLoaded=true;
-      console.log(response)
       this.toastrService.show(response.message,"Hesap Görüntüleme")
     })
     
