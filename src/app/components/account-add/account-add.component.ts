@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { AccountService } from 'src/app/services/account.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { ResponseService } from 'src/app/services/other/response.service';
 
 @Component({
   selector: 'app-account-add',
@@ -14,7 +15,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class AccountAddComponent implements OnInit {
   accountAddForm:FormGroup
   customers:Customer[]=[];
-  constructor(private formBuilder:FormBuilder,private customerService:CustomerService,private accountService:AccountService,private toastrService:ToastrService) { }
+  constructor(private formBuilder:FormBuilder,private responseService:ResponseService,private customerService:CustomerService,private accountService:AccountService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createAccountAddForm();
@@ -30,19 +31,8 @@ export class AccountAddComponent implements OnInit {
   add(){
     if(this.accountAddForm.valid){
       let accountAddModel= Object.assign({},this.accountAddForm.value)
-      this.accountService.add(accountAddModel).subscribe(response=>{
-        console.log("hi")
-      },responseError=>{
-        if(responseError.error.Errors.length>0){
-          for (let i = 0; i < responseError.error.Errors.length; i++) {
-            console.log(responseError)
-            this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"doğrulama hatası")
-            
-          }
-          
-        }
-        
-      })
+      this.accountService.add(accountAddModel)
+      this.responseService.show(this.accountService.add(accountAddModel))
       
     }else{
       

@@ -40,9 +40,6 @@ export class AccountComponent implements OnInit {
       this.customer=response.data;
     })
   }
-  setAccount(){
-    
-  }
 
   deleteById(accountid:number){
     this.accountService.deleteById(accountid).subscribe(response=>{

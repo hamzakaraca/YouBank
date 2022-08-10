@@ -12,6 +12,15 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="userId">Kullanıcıyı Seçiniz</label>
+                        <select type="number" id="userId" formControlName="userId" class="form-select">
+                            <option *ngFor=" let user of users" [ngValue]="user.id">
+                                {{user.firstName}} {{user.lastName}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
                         <label for="country">Şehir</label>
                     <div class="form-group" >
                         <input type="text" id="country" formControlName="country" class="form-control" placeholder="Konya" />
@@ -21,7 +30,7 @@
                     <div class="mb-3">
                         <label for="dateOfBirth">Doğum Tarihi</label>
                     <div class="form-group" >
-                        <input type="datetime-local" id="dateOfBirth" formControlName="dateOfBirth" class="form-control" />
+                        <input type="date" id="dateOfBirth" formControlName="dateOfBirth" class="form-control" />
                     </div>
                     </div>
 
