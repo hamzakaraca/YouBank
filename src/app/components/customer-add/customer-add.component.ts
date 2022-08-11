@@ -44,16 +44,17 @@ export class CustomerAddComponent implements OnInit {
   add() {
     if (this.customerAddForm.valid) {
       let customerAddModel = Object.assign({}, this.customerAddForm.value);
-      this.customerService.add(customerAddModel)
-      this.responseService.show(this.customerService.add(customerAddModel))
-    } else {
+      this.customerService.add(customerAddModel).subscribe(response=>{
+        this.toastrService.success(response.message)
+      },errorResult => this.responseService.errorResponse(errorResult));
+    }
+     else {
     }
   }
 
   getAllUser() {
     this.userservice.getAllUser().subscribe((response) => {
       this.users = response.data;
-      console.log(this.users);
     });
   }
 }

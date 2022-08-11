@@ -48,10 +48,10 @@ export class AccountUpdateComponent implements OnInit {
         this.accountUpdateForm.value
       );
 
-      this.accountService.update(accountUpdateModel);
-      this.responseService.show(
-        this.accountService.update(accountUpdateModel)
-      );
+      this.accountService.update(accountUpdateModel).subscribe(response=>{
+        this.toastrService.success(response.message)
+      },errorResult => this.responseService.errorResponse(errorResult));
+    
     } else {
       this.toastrService.error('Form eksik veya hatalı');
     }

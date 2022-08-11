@@ -7,34 +7,25 @@ import { Subscriber } from 'rxjs';
 })
 export class ResponseService {
   constructor(private toastrService: ToastrService) {}
+  
+  errorResponse(errorResponse: any) {
+    this.errorResultResponse(errorResponse)
+    this.standardExceptionResponse(errorResponse)
+    this.validationExceptionResponse(errorResponse)
+  }
 
-  show(method: any) {
-    method.subscribe(
-      (response) => {
-        this.toastrService.success(response.message);
-      },
-      (responseError) => {
-        if (responseError.error.Errors) {
-          if (responseError.error.Errors.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              console.log(responseError);
-              this.toastrService.error(
-                responseError.error.ValidationErrors[i].ErrorMessage,
-                'doğrulama hatası'
-              );
-            }
-          }
-        } 
+  private errorResultResponse(errorResponse: any) {
+    if (errorResponse.error.message) this.toastrService.error(errorResponse.error.message)
+  }
 
-        if (responseError.error.message) {
-          console.log(responseError.error.message);
-          this.toastrService.error(responseError.error.message);
-        }
-        else if (responseError.error.Message) {
-          console.log(responseError.error.Message);
-          this.toastrService.error(responseError.error.Message);
-        }
-      }
-    );
+  private standardExceptionResponse(errorResponse: any){
+    if (errorResponse.error.Message) this.toastrService.error(errorResponse.error.Message)
+  }
+
+  private validationExceptionResponse(errorResponse: any) {
+    if (errorResponse.error.ValidationErrors) {
+      for (let i = 0; i < errorResponse.error.ValidationErrors.length; i++)
+        this.toastrService.error(errorResponse.error.ValidationErrors[i].ErrorMessage);
+    }
   }
 }

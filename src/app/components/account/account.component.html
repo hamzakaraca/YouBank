@@ -10,10 +10,14 @@
             <th>Müşteri İsmi</th>
             <th>Hesap Oluşturulma Tarihi</th>
             <th>Hesaptaki Para</th>
+            <th><form class="d-flex">
+                <input class="form-control me-2" type="text" [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}"  placeholder="Filtreleyi giriniz" aria-label="Search">
+              </form></th>
+            
         </tr>
  </thead>
  <tbody>
-        <tr *ngFor="let accountdto of accountDtos">
+        <tr *ngFor="let accountdto of accountDtos |accountFullNameFilter:filterText">
             
             <td>{{accountdto.accountNumber}}</td>
             <td>{{accountdto.customerFullName}}</td>

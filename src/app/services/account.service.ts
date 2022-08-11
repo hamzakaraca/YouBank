@@ -56,5 +56,15 @@ export class AccountService {
     let newPath=this.apiUrl+"account/getbyid?id="+id
     return this.httpClient.get<SingleResponseModel<Account>>(newPath)
   }
-  
+
+  getByAccountNumber(accountNumber:number):Observable<ListResponseModel<Account>>
+  {
+    let newPath=this.apiUrl+"account/getbyaccountnumber?accountnumber="+accountNumber
+    return this.httpClient.get<ListResponseModel<Account>>(newPath)
+  }
+  filter(filter:any){
+    let objectForFilter:any
+    let objectForFilterMain= Object.keys(objectForFilter).filter((objectForFilter) =>objectForFilter.search(filter))
+    return objectForFilterMain;
+  }
 }

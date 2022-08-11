@@ -29,7 +29,8 @@ export class UserDeleteComponent implements OnInit {
   }
 
   deleteUser() {
-    this.userService.delete(this.currentUser);
-    this.responseService.show(this.userService.delete(this.currentUser));
+    this.userService.delete(this.currentUser).subscribe(response=>{
+      this.toastrService.success(response.message)
+    },errorResult => this.responseService.errorResponse(errorResult));
   }
 }

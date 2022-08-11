@@ -24,6 +24,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ShowWillPayCreditPipe } from './components/pipes/show-will-pay-credit.pipe';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { AccountNumberFilterPipe } from './components/pipes/account-number-filter.pipe';
+import { AccountFullNameFilterPipe } from './components/pipes/account-full-name-filter.pipe';
 
 
 
@@ -47,6 +49,8 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     ShowWillPayCreditPipe,
     UserDeleteComponent,
     ChangePasswordComponent,
+    AccountNumberFilterPipe,
+    AccountFullNameFilterPipe,
     
   ],
   imports: [

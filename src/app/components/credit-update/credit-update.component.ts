@@ -44,10 +44,11 @@ export class CreditUpdateComponent implements OnInit {
         this.creditUpdateForm.value
       );
       console.log(creditUpdateModel);
-      this.creditService.update(creditUpdateModel);
-      this.responseService.show(
-        this.creditService.update(creditUpdateModel)
-      );
+      this.creditService.update(creditUpdateModel).subscribe(response=>{
+        this.toastrService.success(response.message)
+      },errorResponse=>{
+        this.responseService.errorResponse(errorResponse)
+      })
     } else {
       this.toastrService.error('Form eksik veya hatalı');
     }
