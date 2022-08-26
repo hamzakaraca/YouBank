@@ -1,0 +1,32 @@
+
+
+<!-- Button trigger modal -->
+<img  src="./assets/images/Paraçekme.png" width="67px" height="67px" alt="" type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#moneyDropModal'+id">
+    
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="moneyDropModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="moneyDropForm">
+                <div class="mb-3">
+                    <label for="money">Para miktarı</label>
+                <div class="form-group" >
+                    <input type="number" id="money" formControlName="money" class="form-control" />
+                </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" (click)="checkMaxMoney()" (click)="refresh()" class="btn btn-primary">Para Çek</button>
+        </div>
+      </div>
+    </div>

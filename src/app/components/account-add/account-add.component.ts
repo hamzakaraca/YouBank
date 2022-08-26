@@ -31,6 +31,7 @@ export class AccountAddComponent implements OnInit {
   add(){
     if(this.accountAddForm.valid){
       let accountAddModel= Object.assign({},this.accountAddForm.value)
+      console.log(accountAddModel)
       this.accountService.add(accountAddModel).subscribe(response=>{
         this.toastrService.success(response.message);
       },errorResponse => this.responseService.errorResponse(errorResponse))

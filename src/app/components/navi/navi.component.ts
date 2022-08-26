@@ -25,6 +25,8 @@ export class NaviComponent implements OnInit {
     this.authService.logout();
   }
   
-  
+  isAdmin(){
+    return this.authService.isAdmin();
+  }
   
 }

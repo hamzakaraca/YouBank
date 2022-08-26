@@ -12,6 +12,8 @@ import { AdminGuard } from './components/guards/admin.guard';
 import { LoginGuard } from './components/guards/login.guard';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { MoneyAddComponent } from './components/money-add/money-add.component';
+import { MoneyDropComponent } from './components/money-drop/money-drop.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
@@ -31,7 +33,10 @@ const routes: Routes = [
   {path:"customer/add",component:CustomerAddComponent,canActivate:[LoginGuard]},
   {path:"user/info",component:UserInformationComponent},
   {path:"user/change-password",component:ChangePasswordComponent},
-  {path:"users",component:UserComponent,canActivate:[AdminGuard,LoginGuard]}
+  {path:"users",component:UserComponent,canActivate:[AdminGuard,LoginGuard]},
+  {path:"account/addmoney",component:MoneyAddComponent},
+  {path:"account/dropmoney",component:MoneyDropComponent},
+  {path:"accounts/account/dropmoney",component:MoneyDropComponent}
 ];
 
 @NgModule({

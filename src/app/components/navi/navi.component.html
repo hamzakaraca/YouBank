@@ -31,6 +31,18 @@
         <div *ngIf="ulogin!=true" class="nav-item">
           <button  routerLink="login" class="btn btn-outline-success">Giriş</button>
         </div>
+
+        <div *ngIf="isAdmin()" class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Para İşlemleri
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="account/addmoney" >Para yatırma</a></li>
+            <li><a class="dropdown-item" routerLink="account/dropmoney" >Para çekme</a></li>
+          </ul>
+        </div>
+
+
         <div *ngIf="ulogin!=false" class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Hesabım

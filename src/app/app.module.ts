@@ -26,6 +26,8 @@ import { UserDeleteComponent } from './components/user-delete/user-delete.compon
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AccountNumberFilterPipe } from './components/pipes/account-number-filter.pipe';
 import { AccountFullNameFilterPipe } from './components/pipes/account-full-name-filter.pipe';
+import { MoneyAddComponent } from './components/money-add/money-add.component';
+import { MoneyDropComponent } from './components/money-drop/money-drop.component';
 
 
 
@@ -51,6 +53,8 @@ import { AccountFullNameFilterPipe } from './components/pipes/account-full-name-
     ChangePasswordComponent,
     AccountNumberFilterPipe,
     AccountFullNameFilterPipe,
+    MoneyAddComponent,
+    MoneyDropComponent,
     
   ],
   imports: [

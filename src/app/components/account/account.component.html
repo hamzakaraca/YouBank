@@ -23,7 +23,11 @@
             <td>{{accountdto.customerFullName}}</td>
             <td>{{accountdto.accountCreateDate|date}}</td>
             <td>{{accountdto.money}}</td>
-            <img (click)="deleteById(accountdto.id)" (click)="refresh()" src="./assets/images/Delete.jfif" alt="" width="67px" height="67px">
+            
+            <app-money-add [id]="accountdto.id"></app-money-add>
+            <app-money-drop [id]="accountdto.id"></app-money-drop>
+            
+            <img (click)="deleteById(accountdto.id)" type="button" class="btn btn-primary" (click)="refresh()" src="./assets/images/Delete.jfif" alt="" width="67px" height="67px">
             <app-account-update  [id]="accountdto.id"> </app-account-update>
             
             

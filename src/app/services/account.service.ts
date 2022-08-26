@@ -62,9 +62,25 @@ export class AccountService {
     let newPath=this.apiUrl+"account/getbyaccountnumber?accountnumber="+accountNumber
     return this.httpClient.get<ListResponseModel<Account>>(newPath)
   }
-  filter(filter:any){
-    let objectForFilter:any
-    let objectForFilterMain= Object.keys(objectForFilter).filter((objectForFilter) =>objectForFilter.search(filter))
-    return objectForFilterMain;
+  addMoney(moneyAddModel):Observable<ResponseModel>{
+    let newPath=this.apiUrl+"account/addmoney"
+    return this.httpClient.post<ResponseModel>(newPath,moneyAddModel)
+  }
+
+  dropMoney(moneyDropModel):Observable<SingleResponseModel<number>>{
+    let newPath=this.apiUrl+"account/dropmoney"
+    return this.httpClient.post<SingleResponseModel<number>>(newPath,moneyDropModel)
+  }
+
+  withDrawAllMoney(id){
+    let newPath=this.apiUrl+"account/withdrawallmoney?id="+id;
+    this.httpClient.get<ResponseModel>(newPath).subscribe(response=>{
+      console.log(response.success)
+    },errorRespose => console.log(errorRespose))
+  }
+
+  checkMaxMoney(moneyDropModel){
+    let newPath=this.apiUrl+"account/checkmaxmoney";
+    return this.httpClient.post<ResponseModel>(newPath,moneyDropModel);
   }
 }

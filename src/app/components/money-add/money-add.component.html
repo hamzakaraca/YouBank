@@ -1,0 +1,29 @@
+<!-- Button trigger modal -->
+<img type="button" height="67px" src="./assets/images/Parayatırma.png" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#moneyAddModel'+id"/>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="moneyAddModel{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Para Ekle</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="moneyAddForm">
+                <div class="mb-3">
+                    <label for="money">Para miktarı</label>
+                <div class="form-group" >
+                    <input type="number" id="money" [(ngModel)]="quantityOfMoney" formControlName="money" class="form-control" />
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="button" class="btn btn-success" (click)="refresh()" (click)="addMoney()">Ekle</button>
+        </div>
+      </div>
+    </div>
+  </div>
